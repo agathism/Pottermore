@@ -1,0 +1,24 @@
+<h1 class="text-4xl my-6 font- text-black flex justify-center items-center">Listes des livres </h1>
+
+<div class="flex flex-col items-center flex-wrap w-[85%] gap-10 ">
+    @for ( book of books; track book.index) {
+    <div  class="w-[40%] flex flex-row flex-wrap justify-center items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+        <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="{{ book.cover }}" alt="{{ book.title }}" class="w-[250px] mt-6">
+        <div class="flex flex-col justify-between p-4 leading-normal">
+            <span class="flex flex-row justify-between items-center">
+            <p class="border rounded-md mb-2 bg-white w-18 text-center text-black">
+                {{ book.pages }} pgs
+            </p>
+            <p class="border rounded-md mb-2 bg-white w-18 text-center text-black">
+                {{ book.releaseDate }}
+            </p>
+            </span>
+            <hgroup class="flex flex-col justify-between">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ book.title }}</h5>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ book.description }}</p>
+            </hgroup>
+        </div>
+    </div>
+
+}
+</div>
