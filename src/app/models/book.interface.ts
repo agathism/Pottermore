@@ -1,10 +1,10 @@
 export default interface Book {
-  number: number
+  serial: string
   title: string
-  originalTitle: string
-  releaseDate: string
-  description: string
-  pages: number
+  summary: string
+  release_date: string
+  dedication: string
+  pages: string
   cover: string
-  index: number
+  wiki: string
 }

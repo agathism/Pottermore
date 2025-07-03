@@ -4,11 +4,14 @@ import { HomeComponent } from './components/home/home.component';
 import { HouseComponent } from './components/house/house.component';
 import { SpellsComponent } from './components/spells/spells.component';
 import { BooksComponent } from './components/books/books.component';
+import { MoviesComponent } from './components/movies/movies.component';
 
 export const routes: Routes = [
     { path: 'app-login', component: LoginComponent},
     { path: 'app-home', component: HomeComponent},
     { path: 'app-house', component: HouseComponent},
     { path: 'app-spells', component: SpellsComponent},
-    { path: 'app-books', component: BooksComponent}
+    { path: 'app-books', component: BooksComponent},
+    { path: 'app-movies', component: MoviesComponent},
+    { path: '', redirectTo: 'app-home', pathMatch: 'full'}
 ];

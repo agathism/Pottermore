@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
-import HarryPotterCharacter from '../../models/character.interface';
 import Book from '../../models/book.interface';
 
 @Component({
@@ -14,7 +13,7 @@ export class BooksComponent implements OnInit{
     private httpClient: HttpClient = inject(HttpClient);
     books: Book[] = [];
     ngOnInit(): void {
-      this.httpClient.get<Book[]>('https://potterapi-fedeperin.vercel.app/en/books',
+      this.httpClient.get<Book[]>('https://potterhead-api.vercel.app/api/books',
         { headers: { 'accept': 'application/json' } }
       ).subscribe({
         next: (data) => {

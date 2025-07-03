@@ -1,16 +1,17 @@
-<h1 class="text-4xl mt-8 font- text-black flex justify-center items-center">Bienvenue sur Pottermore</h1>
+<h1 class="text-4xl mt-12 font-medium text-black flex justify-center items-center">Bienvenue sur Pottermore</h1>
 
-<div class="flex flex-col items-center flex-wrap w-max my-20 gap-10">
-    @for (character of characters; track character.index) {
-        <div class="w-60 h-80 bg-[#101828] rounded-3xl text-neutral-300 p-4 flex flex-col items-start justify-center gap-3 hover:bg-gray-900 hover:shadow-2xl hover:shadow-sky-400 transition-shadow">
-        <div class="w-52 h-40 rounded-2xl overflow-hidden">
-            <img src="{{ character.image }}" alt="{{ character.nickname }}" class="w-full h-full object-cover">
+<div class="flex flex-wrap justify-center items-center w-[95%] my-10 mx-auto gap-10">
+    @for (character of characters; track character.id) {
+        <div class="w-[20%] bg-[#101828] rounded-3xl text-white p-4 flex flex-col items-start justify-center gap-3 hover:bg-gray-900 hover:shadow-2xl hover:shadow-[#c1a01a] transition-shadow">
+        <div class="w-full h-40 rounded-2xl overflow-hidden">
+            <img src="{{ character.image }}" alt="{{ character.name }}" class="w-full h-full object-cover">
         </div>
         <div class="">
-            <p class="font-extrabold">{{ character.nickname }}</p>
-            <p class="">{{ character.interpretedBy}}</p>
+            <p class="font-bold">{{ character.name }}</p>
+            <p class="">Actor : <strong>{{ character.actor}}</strong></p>
+            <p>{{ character.alternate_names}}</p>
         </div>
-        <span [class]="getHouseClass(character.hogwartsHouse)">{{ character.hogwartsHouse }} </span>
+        <span [class]="getHouseClass(character.house)">{{ character.house }} </span>
     </div>
     }
 </div>

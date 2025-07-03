@@ -1,1 +1,16 @@
-<p>house works!</p>
+<h1 class="text-4xl my-12 font- text-black flex justify-center items-center"> Les maisons de l'école </h1>
+
+<div class="flex flex-wrap justify-center items-center w-[95%] gap-10">
+    @for ( house of houses; track house.index) {
+    <div class="w-[20%] bg-[#101828] p-6 rounded-lg ">
+        <p class="my-4"> {{ house.emoji }} </p>
+        <a href="#">
+            <h5 class="mb-2 text-2xl font-semibold tracking-tight text-white">{{ house.house }}</h5>
+        </a>
+        <p class="mb-3 font-normal text-white">{{ house.colors }}</p>
+        <a href="#" [class]="getFounderClass(house.house)">
+            {{ house.founder }}
+        </a>
+    </div>
+    }
+</div>

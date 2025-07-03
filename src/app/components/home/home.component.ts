@@ -10,11 +10,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
+
 export class HomeComponent implements OnInit{
   private httpClient: HttpClient = inject(HttpClient);
   characters: HarryPotterCharacter[] = [];
   ngOnInit(): void {
-    this.httpClient.get<HarryPotterCharacter[]>('https://potterapi-fedeperin.vercel.app/en/characters',
+    this.httpClient.get<HarryPotterCharacter[]>('https://potterhead-api.vercel.app/api/characters',
       { headers: { 'accept': 'application/json' } }
     ).subscribe({
       next: (data) => {
@@ -38,7 +39,7 @@ export class HomeComponent implements OnInit{
       return `${baseClass} bg-[#222f5b] hover:bg-[#222f5b] text-white`;
     default:
       return `${baseClass} bg-gray-600 hover:bg-gray-500 text-white`;
+    }
   }
-}
 };
 
