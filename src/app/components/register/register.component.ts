@@ -24,12 +24,11 @@ import { User } from '../../models/user.interface';
 
 export class RegisterComponent {
 
-  inputPWType: string = 'password';
-  registerForm: FormGroup ;
+  registerForm: FormGroup;
   formBuilder: FormBuilder = inject(FormBuilder);
   userService: UserService = inject(UserService);
 
-  constructor(){
+  constructor() {
     this.registerForm = this.formBuilder.group({
       // J'avais mi Validators.firstName mais j'avais une erreur car elle n'existe pas dans Validators, pareil pour billingAddres et birthDate
       firstname: ['', [Validators.required]],
@@ -39,5 +38,34 @@ export class RegisterComponent {
       birthDate: ['', Validators.required],
       password: ['', [Validators.required]],
     });
+  }
+
+  monFormEstSoumis() {
+    if (this.registerForm.valid) {
+      console.log(
+        "Form valide je peux envoyer la requete de register a l'api /auth"
+      );
+      // J'appel de la méthode du service
+      const { email, password, firstName, name, billingAddress, birthDate } = this.registerForm.value;
+      this.userService.register({ email, password, firstName, name, billingAddress, birthDate }).subscribe({
+        next: (data: any) => {
+          // Je récupère le token
+          console.log('Données reçues:', data);
+
+          // Je stock le token en localStorage seulement s'il existe
+          if (data && data.token) {
+            localStorage.setItem('authToken', data.token);
+          } else {
+            error: (error: any) => {
+              if (error && error.error && error.error.message) {
+                console.log(error.error.message);
+              } else {
+                console.log('An unknown error occurred during login.', error);
+              }
+            }
+          };
+        }
+      })
+    }
   }
 }

@@ -17,13 +17,14 @@ export class UserService {
     });
   }
 
-  register(user: User) {
-    return this.httpClient.post('https://atelier-de-toril.fr/' + user, {
-      headers: {
-        accept: 'application/json'
-      }
-    });
-  }
+  register(user: Partial<User>) {
+  return this.httpClient.post('https://atelier-de-toril.fr/api/users', user, {
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    }
+  });
+}
 
   getCurrent(token: string) {
     return this.httpClient.get('https://atelier-de-toril.fr/' + 'api/me', {

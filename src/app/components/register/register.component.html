@@ -1,7 +1,7 @@
 <h1 class="text-4xl my-10 text-black flex justify-center items-center"> Register </h1>
 
 <div class="relative sm:max-w-md sm:mx-auto mt-6 mb-10">
-    <form action="" [formGroup]="registerForm">
+    <form [formGroup]="registerForm" (ngSubmit)="monFormEstSoumis()">
   <div class=" px-8 py-6 mt-4 text-left bg-white dark:bg-[#101828] rounded-xl shadow-lg" >
     <div class="flex flex-col justify-center items-center select-none">
       <div class="flex flex-col items-center justify-center gap-2 mb-8">
@@ -16,10 +16,10 @@
       <div class="w-full flex flex-col gap-2">
         <label for="firstName" class="font-semibold text-md text-gray-300">Firtname</label>
         <input
+        formControlName="firstName"
           placeholder="Tom"
           type="text"
           id="firstName"
-          required
           size="50"
           class="border rounded-lg px-3 py-2 mb-5 text-sm w-full outline-none text-gray-500"
         />
@@ -27,10 +27,10 @@
       <div class="w-full flex flex-col gap-2">
         <label for="name" class="font-semibold text-md text-gray-300">Name</label>
         <input
+        formControlName="name"
           placeholder="Riddle"
           type="text"
           id="name"
-          required
           class="border rounded-lg px-3 py-2 mb-5 text-sm w-full outline-none text-gray-500"
         />
       </div>
@@ -38,10 +38,10 @@
       <div class="w-full flex flex-col gap-2">
         <label for="email" class="font-semibold text-md text-gray-300">Email</label>
         <input
+        formControlName="email"
           placeholder="votre.email@example.com"
           type="email"
           id="email"
-          required
           class="border rounded-lg px-3 py-2 mb-5 text-sm w-full outline-none text-gray-500"
         />
       </div>
@@ -49,21 +49,22 @@
       <div class="w-full flex flex-col gap-2">
         <label for="birthDate" class="font-semibold text-md text-gray-300">Birth Date</label>
         <input
+        formControlName="birthDate"
           placeholder="birthDate"
-          type="date"
+          type="text"
           id="birthDate"
           required
-          size="100"
+          size="50"
           class="border rounded-lg px-3 py-2 mb-5 text-sm w-full outline-none text-gray-500"
         />
       </div>
       <div class="w-full flex flex-col gap-2">
         <label for="billingAddress" class="font-semibold text-md text-gray-300">Billing Address</label>
         <input
+        formControlName="billingAddress"
           placeholder="23 Rue de Paris, 75000 Paris"
           type="text"
           id="billingAddress"
-          required
           size="50"
           class="border rounded-lg px-3 py-2 mb-5 text-sm w-full outline-none text-gray-500"
         />
@@ -72,10 +73,10 @@
       <div class="w-full flex flex-col gap-2">
         <label for="password" class="font-semibold text-md text-gray-300">Password</label>
         <input
+        formControlName="password"
           type="password"
           id="password"
-          placeholder="••••••••••••"
-          required
+          placeholder="•••"
           class="border rounded-lg px-3 py-2 mb-5 text-sm w-full outline-none text-gray-500"
         />
       </div>

@@ -8,8 +8,7 @@ import {
 } from '@angular/forms';
 import { UserService } from '../../services/user-service';
 import { CommonModule } from '@angular/common';
-import {User} from '../../models/user.interface';
-// Pour ce llogin j'ai la meme démarche que celui du register
+// Pour ce login j'ai la meme démarche que celui du register
 
 @Component({
   selector: 'app-login',
@@ -19,7 +18,6 @@ import {User} from '../../models/user.interface';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  inputPWType: string = 'password';
   loginForm: FormGroup; 
   formBuilder: FormBuilder = inject(FormBuilder);
   userService: UserService = inject(UserService);
@@ -29,14 +27,6 @@ export class LoginComponent {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
     });
-  }
-
-  togglePW() {
-    if (this.inputPWType === 'password') {
-      this.inputPWType = 'text';
-    } else {
-      this.inputPWType = 'password';
-    }
   }
 
   monFormEstSoumis() {
@@ -49,19 +39,24 @@ export class LoginComponent {
         "Form valide je peux envoyer la requete de login a l'api /auth"
       );
       // J'appel de la méthode du service
-      this.userService.login(this.loginForm.value).subscribe({
+      const { email, password } = this.loginForm.value;
+      this.userService.login({ email, password }).subscribe({
         next: (data: any) => {
-
           // Je récupère du token
           console.log(data);
 
-          // Je stock le token en localStorage
-          localStorage.setItem('authToken', data.token);
-        },
-        error: (error) => {
-          console.log(error.error.message);
-        },
-      });
+          // Je stock le token en localStorage seulement s'il existe
+          if (data && data.token) {
+            localStorage.setItem('authToken', data.token);
+          } else {
+        error: (error: any) => {
+          if (error && error.error && error.error.message) {
+            console.log(error.error.message);
+          } else {
+            console.log('An unknown error occurred during login.', error);
+          }
+        }
+      };
     }
-  }
-}
+  })
+}}}
