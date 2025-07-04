@@ -1,7 +1,7 @@
 <h1 class="text-4xl my-10 text-black flex justify-center items-center"> Register </h1>
 
 <div class="relative sm:max-w-md sm:mx-auto mt-6 mb-10">
-    <form [formGroup]="registerForm" (ngSubmit)="monFormEstSoumis()">
+    <form [formGroup]="registerForm" (ngSubmit)="registerSoumis()">
   <div class=" px-8 py-6 mt-4 text-left bg-white dark:bg-[#101828] rounded-xl shadow-lg" >
     <div class="flex flex-col justify-center items-center select-none">
       <div class="flex flex-col items-center justify-center gap-2 mb-8">
@@ -53,7 +53,6 @@
           placeholder="birthDate"
           type="text"
           id="birthDate"
-          required
           size="50"
           class="border rounded-lg px-3 py-2 mb-5 text-sm w-full outline-none text-gray-500"
         />

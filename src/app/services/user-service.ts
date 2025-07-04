@@ -17,7 +17,7 @@ export class UserService {
     });
   }
 
-  register(user: Partial<User>) {
+  register(user: User) {
   return this.httpClient.post('https://atelier-de-toril.fr/api/users', user, {
     headers: {
       'Content-Type': 'application/json',

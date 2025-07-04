@@ -39,7 +39,8 @@ Voici les étapes que j’ai suivies pour mener à bien ce projet d’applicatio
 
 | Nom  | Notes |
 | :------------ | -----:|
-| ** Détail des personnages **| J'ai laissé tombé car je veux pas rester bloquer sur une même erreur. Je vais faire le formulaire.|
+| **Détail des personnages**| J'ai laissé tombé car je veux pas rester bloquer sur une même erreur. Je vais faire le formulaire.|
+|**Formulaire Register**| J'ai laisser tomber car j'arrive pas à savoir quel est le pronlème. Je continuerais un autre jour l'esprit reposé.|
 
 
 ## 🔮 Fonctionnalités à venir

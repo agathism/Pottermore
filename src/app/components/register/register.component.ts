@@ -8,7 +8,6 @@ import {
 } from '@angular/forms';
 import { UserService } from '../../services/user-service';
 import { CommonModule } from '@angular/common';
-import { User } from '../../models/user.interface';
 
 @Component({
   selector: 'app-register',
@@ -40,10 +39,10 @@ export class RegisterComponent {
     });
   }
 
-  monFormEstSoumis() {
+  registerSoumis() {
     if (this.registerForm.valid) {
       console.log(
-        "Form valide je peux envoyer la requete de register a l'api /auth"
+        "Form valide je peux envoyer la requete de register a l'api/users"
       );
       // J'appel de la méthode du service
       const { email, password, firstName, name, billingAddress, birthDate } = this.registerForm.value;
