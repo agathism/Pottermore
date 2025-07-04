@@ -18,7 +18,7 @@ export const routes: Routes = [
     { path: 'app-spells', component: SpellsComponent},
     { path: 'app-books', component: BooksComponent},
     { path: 'app-movies', component: MoviesComponent},
-    { path: 'app-character-detail/:id', component: CharacterDetailComponent },
+    { path: 'app-character-detail/:name', component: CharacterDetailComponent },
     { path: 'app-movie/detail/:id', component: MovieDetailComponent},
     { path: 'app-house-detail/:id', component: HouseDetailComponent },
     { path: '', redirectTo: 'app-home', pathMatch: 'full'}

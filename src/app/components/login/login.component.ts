@@ -40,7 +40,7 @@ export class LoginComponent {
   }
 
   monFormEstSoumis() {
-    
+
     // Tout comme les autres étapes j'ai suivi ton code. J'ai plus confiance car j'ai compris beaucoup plus.
     // Faire les choses à la main m'a persis de comprendre plus facilement.
 
@@ -51,10 +51,12 @@ export class LoginComponent {
       // J'appel de la méthode du service
       this.userService.login(this.loginForm.value).subscribe({
         next: (data: any) => {
+
           // Je récupère du token
           console.log(data);
-          // Je stock le token en localStorage
 
+          // Je stock le token en localStorage
+          localStorage.setItem('authToken', data.token);
         },
         error: (error) => {
           console.log(error.error.message);

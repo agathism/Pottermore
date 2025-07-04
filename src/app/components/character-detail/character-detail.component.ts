@@ -16,28 +16,23 @@ export class CharacterDetailComponent implements OnInit {
   private characterDetailService = inject(CharacterDetailService)
   isLoading = false;
   character: HarryPotterCharacter | null =null;
-  characterId: string | null = null;
-  id: number | null = null;
+  characterName: string | null = null;
 
   ngOnInit(): void {
 
-    this.characterId = this.route.snapshot.paramMap.get('id');
-    if (this.characterId) {
-      this.id = parseInt(this.characterId);
-      this.getCharacter();
-    }
-  }
-  getCharacter() {
+    this.characterName = this.route.snapshot.paramMap.get('name');
     this.isLoading = true;
-    if(this.id){
-      this.characterDetailService.getCharacter(this.id).subscribe({
+    if(this.characterName){
+      this.characterDetailService.getCharacter(this.characterName).subscribe({
         next: (data) => {
           this.isLoading = false;
           this.character = data;
-          console.log(this.character);
-        }
-      });  
-    }
+          },
+          error:(e)=>{
+            console.log(e);
+          }
+      });
+  }
   }
 }
 

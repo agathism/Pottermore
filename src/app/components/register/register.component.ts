@@ -33,7 +33,7 @@ export class RegisterComponent {
     this.registerForm = this.formBuilder.group({
       // J'avais mi Validators.firstName mais j'avais une erreur car elle n'existe pas dans Validators, pareil pour billingAddres et birthDate
       firstname: ['', [Validators.required]],
-      name: ['', [Validators.required, Validators.name]],
+      name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       billingAddress: ['', [Validators.required]],
       birthDate: ['', Validators.required],
