@@ -39,7 +39,7 @@ Voici les étapes que j’ai suivies pour mener à bien ce projet d’applicatio
 
 | Nom  | Notes |
 | :------------ | -----:|
-| **Détail des personnages**| J'ai laissé tombé car je veux pas rester bloquer sur une erreur CORS. Je vais m'arrêter là sur les détails|
+| **Détail des personnages**| J'ai laissé tombé car je veux pas rester bloquer sur une erreur CORS. Je vais m'arrêter là sur les détails. Je vais rajouter une capture d'écran.|
 |**Formulaire Register**| J'ai laisser tomber car j'arrive pas à savoir quel est le pronlème. Je continuerais un autre jour l'esprit reposé.|
 
 ![](corserror.png)
