@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CharacterDetailService } from '../../services/character-detail.service';
+import HarryPotterCharacter from '../../models/character.interface';
 
 @Component({
   selector: 'app-character-detail',
@@ -8,5 +11,4 @@ import { Component } from '@angular/core';
   styleUrl: './character-detail.component.scss'
 })
 export class CharacterDetailComponent {
-
 }

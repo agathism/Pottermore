@@ -24,7 +24,7 @@ export class HouseComponent implements OnInit {
       });
   }
   getFounderClass(house: string): string {
-  const baseClass = 'inline-flex font-medium items-center text-black hover:underline';
+  const baseClass = 'rounded-sm inline-flex font-medium items-center text-black hover:underline';
   
   switch(house?.toLowerCase()) {
     case 'gryffindor':

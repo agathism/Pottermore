@@ -2,11 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import HarryPotterCharacter from '../../models/character.interface';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
