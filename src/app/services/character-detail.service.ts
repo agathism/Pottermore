@@ -14,7 +14,7 @@ export class CharacterDetailService {
   name: string | null = null;
 
   getCharacter(name: string): Observable<HarryPotterCharacter> {
-    return this.httpClient.get<HarryPotterCharacter>(this.baseUrl + '/' + name, 
+    return this.httpClient.get<HarryPotterCharacter>(this.baseUrl + name, 
       { headers: 
         { 'accept': 'application/json' }
        });
