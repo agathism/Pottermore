@@ -1,22 +1,10 @@
-# Pottermore
-
-# 🔶Introduction au projet
-**Overhub** est une plateforme web communautaire dédiée à l'univers d'Overwatch, conçue pour rassembler les passionnés du jeu en un lieu de" présentation des héros et de leur abilités et aussi un centre d'échange et d'information.
-
-Overhub a été créé avec l'ambition de devenir un carrefour pour les joueurs d'Overwatch qui souhaitent :
-
-- Explorer en profondeur les profils et capacités des héros.
-- Rester informés des dernières mises à jour et événements.
-- Partager leurs expériences et stratégies avec d'autres passionnés.
-- Construire une communauté active et bienveillante autour du jeu.
-
-Cette plateforme offre à la fois une base de données sur les personnages de l'univers d'Overwatch et un espace social interactif pour échanger avec d'autres passionnés du jeu.
+# Pottermores
 
 ## 🎮 Harry Potter en résumé 
 Harry Potter est une série de romans fantasy écrite par J.K. Rowling. Publiée entre 1997 et 2007, elle raconte l'histoire d'un jeune sorcier orphelin qui découvre ses pouvoirs magiques et intègre l'école de sorcellerie Poudlard. Avec ses amis Hermione et Ron, Harry affronte le mage noir Voldemort dans un monde où la magie coexiste secrètement avec le monde des Moldus (non-sorciers). La saga explore les thèmes de l'amitié, du courage et de la lutte entre le bien et le mal à travers sept livres qui ont révolutionné la littérature jeunesse et donné naissance à une franchise cinématographique mondiale.
 
 ## 🛠️ Méthodologie de travail
-Voici les étapes que j’ai suivies pour mener à bien ce projet d’application autour du jeu Overwatch :
+Voici les étapes que j’ai suivies pour mener à bien ce projet d’application autour d'Harry Potter:
 
 ### 1. 📦 Documentation
 - Rédaction du **README** avec explications claires de mes idées à l'origine du projet. Ce fichier sera mise à jour au fil du développement du projet.
@@ -46,6 +34,12 @@ Voici les étapes que j’ai suivies pour mener à bien ce projet d’applicatio
 | :------------ |:---------------:| -----:|
 | **Id dans l'url qui ramène sur une erreur 404** |  Après réelecture et un essai dans le navigateur j'ai changé les routes de `character/:id` à `character/:name`. J'ai fait des changements partout. Le `service`, dans `l'app.config.ts` et aussi dans `l'html`.| J'aurais dû faire plus attention mais dans la doc de l'API on se connecte à partir du nom des personnages. Quelque chose dont je ne suis pas habitué et qui me semble peu safe, je n'ai donc pas fait attention. |
 | **Validators.name n'existe pas**    |  Il fallait enlever ``name`` au ``Validators``. |    Cette erreur m'a surprise. Pas d'erreur affichée donc j'ai assumer que c'était autre chose. Une leçon que même si quelque chose marche elle peut toujours être l'erreur. Et tôt ou tard elle lachera.|
+
+## Page abandonnées
+
+| Nom  | Notes |
+| :------------ | -----:|
+| ** Détail des personnages **| J'ai laissé tombé car je veux pas rester bloquer sur une même erreur. Je vais faire le formulaire.|
 
 
 ## 🔮 Fonctionnalités à venir
