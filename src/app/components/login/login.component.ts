@@ -30,10 +30,8 @@ export class LoginComponent {
   }
 
   monFormEstSoumis() {
-
-    // Tout comme les autres étapes j'ai suivi ton code. J'ai plus confiance car j'ai compris beaucoup plus.
-    // Faire les choses à la main m'a persis de comprendre plus facilement.
-
+    // Je vérifie si le formulaire est valide
+    // Si oui, je peux envoyer la requête à l'API
     if (this.loginForm.valid) {
       console.log(
         "Form valide je peux envoyer la requete de login a l'api /auth"
