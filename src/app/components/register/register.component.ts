@@ -17,10 +17,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './register.component.scss'
 })
 
-// Pour ce register je vais utiliser l'api du coliving car celui du Potterhead ne ppossède pas d'interface User. 
-// C'est la même chose que celui de l'api du co-living mais j'ai bien pris le temps de lire chaque ligne 
-// et de les comprendre. J'ai pris des notes sur les difféntes étapes et le formulaire me parait pplus claire
-
 export class RegisterComponent {
 
   registerForm: FormGroup;
@@ -29,7 +25,7 @@ export class RegisterComponent {
 
   constructor() {
     this.registerForm = this.formBuilder.group({
-      // J'avais mi Validators.firstName mais j'avais une erreur car elle n'existe pas dans Validators, pareil pour billingAddres et birthDate
+      // Définition des contrôles du formulaire avec leurs validations
       firstname: ['', [Validators.required]],
       name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
