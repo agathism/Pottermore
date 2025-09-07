@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 })
 
 export class CharacterDetailService {
-
   private httpClient: HttpClient = inject(HttpClient);
   private baseUrl = 'https://potterhead-api.vercel.app/api/characters/';
   name: string | null = null;
